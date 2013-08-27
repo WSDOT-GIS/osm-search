@@ -25,6 +25,8 @@
 	if ("geolocation" in navigator) {
 		navigator.geolocation.getCurrentPosition(function (position) {
 			createMap(position);
+		}, function () {
+			createMap();
 		});
 	} else {
 		createMap();
@@ -32,7 +34,7 @@
 
 
 
-	document.forms.osmform.onsubmit = function () {
-		console.debug(arguments);
+	document.forms.osmform.onsubmit = function (evt) {
+		////console.debug(this, evt);
 	}
 });
